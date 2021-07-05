@@ -29,7 +29,20 @@ new Vue(
                         date: '17-06-2021'
                     }
                 ]
-            }
+            },
+            newMessages:"",
         },
+        methods: {
+            sendMessage: function () {
+                
+                this.myProfile.posts.unshift({
+                    date: "05/07/2021",
+                    text: this.newMessages,
+
+                });
+                this.newMessages = "";
+            },
+
+        }
     }
 );

@@ -87,11 +87,10 @@ buttonHtml.addEventListener("click", function () {
     let newText = check.value;
      
     data.myProfile.posts.push({     
-        
         text: newText,
         date: correntDate     
     })
-    
+
     check.value = ""; 
 
     let newObjets = `    
