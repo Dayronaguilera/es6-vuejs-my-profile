@@ -81,18 +81,36 @@ Sviluppare sia in vanilla/es6 che in VueJS
 const buttonHtml = document.querySelector(".send");
 
 buttonHtml.addEventListener("click", function () {
-    console.log("funziona");
 
-    const check = document.getElementsByClassName('text');
-    let newText = check[0].value;
-
-    console.log(newText);
-
-    var prova = data.myProfile.posts.push({
-        text: newText,
-        mediaPath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Supernerd_%283262512306%29.jpg/1024px-Supernerd_%283262512306%29.jpg',
-        date: '17-06-2021',
+    let correntDate = "05/07/2021";
+    const check = document.querySelector('.text');
+    let newText = check.value;
+     
+    data.myProfile.posts.push({     
         
-    })    
+        text: newText,
+        date: correntDate     
+    })
     
+    check.value = ""; 
+
+    let newObjets = `    
+    <div class="post-details"> 
+        <div class="user-pic">
+            <img src="${data.myProfile.details.pic}" alt="user pic">
+        </div>
+        <div class="details">
+            <div class="user-name">${data.myProfile.details.name} ${data.myProfile.details.surname}</div>
+            <div class="post-date">${correntDate}</div>
+        </div>
+        
+    </div> 
+    <div class="post-text">
+        ${newText}
+    </div>
+    `
+
+    postListHtml.innerHTML += `<div class="post"> ${newObjets} </div>`
+
 })
+
