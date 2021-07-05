@@ -54,7 +54,7 @@ data.myProfile.posts.forEach((post) => {
     <div class="post-text">
         ${post.text}
     </div>
-` 
+    ` 
     // solo se l'immagine esiste aggiungere a postHtml l'html del media
     // mediaPath è una chiave che "a volte" esiste. <= verifichiamo che esista.
     // usiamo Object.keys(post) per ottenere tutte le chiavi di un oggetto => è una lista/array
@@ -69,4 +69,30 @@ data.myProfile.posts.forEach((post) => {
     // e il tutto dentro postListHtml.innerHtml.
 
     postListHtml.innerHTML += `<div class="post"> ${postHtml} </div>`
-}) 
+}); 
+/*
+Con un click su “CREA” viene pushato un nuovo post nell’array posts, 
+con il testo della textarea.
+Sviluppare sia in vanilla/es6 che in VueJS
+*/
+
+//1 - creare un nuovo array con gli oggetti e verra pushato!
+
+const buttonHtml = document.querySelector(".send");
+
+buttonHtml.addEventListener("click", function () {
+    console.log("funziona");
+
+    const check = document.getElementsByClassName('text');
+    let newText = check[0].value;
+
+    console.log(newText);
+
+    var prova = data.myProfile.posts.push({
+        text: newText,
+        mediaPath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Supernerd_%283262512306%29.jpg/1024px-Supernerd_%283262512306%29.jpg',
+        date: '17-06-2021',
+        
+    })    
+    
+})
