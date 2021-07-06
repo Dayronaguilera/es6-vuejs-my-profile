@@ -50,6 +50,7 @@
     height: 40px;
     font-size: 18px;
     padding: 5px;
+    outline: none;
 }
 
 .new-post .send {
@@ -69,6 +70,7 @@
     border-radius: 5px;
     box-shadow: 0 0 3px #ccc;
     padding: 15px;
+    margin-bottom: 10px;
 }
 
 .post-media img {
